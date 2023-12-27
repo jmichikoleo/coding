@@ -1,0 +1,89 @@
+class Sentence:
+    def __init__(self, cells, count):
+        self.cells = set(cells)
+        self.count = count
+
+    def known_mines(self):
+        if len(self.cells) == self.count:
+            return self.cells.copy()
+
+    def known_safes(self):
+        if self.count == 0:
+            return self.cells.copy()
+
+    def mark_mine(self, cell):
+        if cell in self.cells:
+            self.cells.remove(cell)
+            self.count -= 1
+
+    def mark_safe(self, cell):
+        if cell in self.cells:
+            self.cells.remove(cell)
+
+
+class MinesweeperAI:
+    def __init__(self, height, width):
+        self.height = height
+        self.width = width
+        self.moves_made = set()
+        self.mines = set()
+        self.safes = set()
+        self.knowledge = []
+
+    def add_knowledge(self, cell, count):
+        self.moves_made.add(cell)
+        self.safes.add(cell)
+
+        new_sentence_cells = self.get_neighbors(cell)
+        new_sentence_cells = {neighbor for neighbor in new_sentence_cells if neighbor not in self.moves_made}
+        new_sentence = Sentence(new_sentence_cells, count)
+        self.knowledge.append(new_sentence)
+
+        for sentence in self.knowledge:
+            known_mines = sentence.known_mines()
+            if known_mines:
+                self.mines.update(known_mines)
+                self.safes.difference_update(known_mines)
+
+            known_safes = sentence.known_safes()
+            if known_safes:
+                self.safes.update(known_safes)
+
+        self.knowledge = [s for s in self.knowledge if len(s.cells) > 0]
+
+        for sentence1 in self.knowledge:
+            for sentence2 in self.knowledge:
+                if sentence1 != sentence2:
+                    if sentence1.cells.issubset(sentence2.cells):
+                        new_cells = sentence2.cells - sentence1.cells
+                        new_count = sentence2.count - sentence1.count
+                        new_sentence = Sentence(new_cells, new_count)
+                        if new_sentence not in self.knowledge:
+                            self.knowledge.append(new_sentence)
+
+    def make_safe_move(self):
+        for move in self.safes:
+            if move not in self.moves_made:
+                return move
+        return None
+
+    def make_random_move(self):
+        possible_moves = set()
+        for i in range(self.height):
+            for j in range(self.width):
+                move = (i, j)
+                if move not in self.moves_made and move not in self.mines:
+                    possible_moves.add(move)
+        if possible_moves:
+            return random.choice(list(possible_moves))
+        return None
+
+    def get_neighbors(self, cell):
+        i, j = cell
+        neighbors = []
+        for x in range(max(0, i - 1), min(self.height, i + 2)):
+            for y in range(max(0, j - 1), min(self.width, j + 2)):
+                neighbor = (x, y)
+                if neighbor != cell:
+                    neighbors.append(neighbor)
+        return neighbors
