@@ -1,0 +1,256 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[2]:
+
+
+import streamlit as st
+import pandas as pd
+import os 
+import matplotlib.pyplot as plt
+
+
+# In[4]:
+
+
+df1 = pd.read_csv('AKULAKU_FEB.csv')
+df2 = pd.read_csv('ALLSEDAYU_FEB.csv')
+df3 = pd.read_csv('ARGAPURA2_FEB.csv')
+df4 = pd.read_csv('ARWANACITRA_FEB.csv')
+df5 = pd.read_csv('ASURANSIJIWAALAMIN_FEB.csv')
+df6 = pd.read_csv('AXA4_FEB.csv')
+df7 = pd.read_csv('AXAKUNINGAN1_FEB.csv')
+df8 = pd.read_csv('AXAKUNINGAN2_FEB.csv')
+df9 = pd.read_csv('AXAKUNINGAN3_FEB.csv')
+df10 = pd.read_csv('BAKRIEANDBROTHERLT27_FEB.csv')
+df11 = pd.read_csv('BNIRAWAMANGUN_FEB.csv')
+df12 = pd.read_csv('CBCGALLERY_FEB.csv')
+df13 = pd.read_csv('CLUSTERATHALIA1_FEB.csv')
+df14 = pd.read_csv('CLUSTERATHALIA2_FEB.csv')
+df15 = pd.read_csv('CLUSTERBLUERIVER2_FEB.csv')
+df16 = pd.read_csv('CVJAYAABADI3_FEB.csv')
+df17 = pd.read_csv('DIGNITASACADEMY_FEB.csv')
+df18 = pd.read_csv('GRAHAELNUSA_FEB.csv')
+df19 = pd.read_csv('GRIYAPATRIAGUESTHOUSE_FEB.csv')
+df20 = pd.read_csv('HALIM_FEB.csv')
+df21 = pd.read_csv('HONDAMTHARYONO_FEB.csv')
+df22 = pd.read_csv('HOTEL101_FEB.csv')
+df23 = pd.read_csv('HOTELHERMITAGE_FEB.csv')
+df24 = pd.read_csv('HOTELHILTON_FEB.csv')
+df25 = pd.read_csv('HOTELKEMPINSKI1_FEB.csv')
+df26 = pd.read_csv('HOTELMERCURE_FEB.csv')
+df27 = pd.read_csv('HOTELPARKHYATT_FEB.csv')
+df28 = pd.read_csv('HOTELWYNDHAM_FEB.csv')
+df29 = pd.read_csv('INDOCEMENT_FEB.csv')
+df30 = pd.read_csv('INDOCEMENT2_FEB.csv')
+df31 = pd.read_csv('INDOCEMENT3_FEB.csv')
+df32 = pd.read_csv('INDOCEMENT4_FEB.csv')
+df33 = pd.read_csv('INDOCEMENT5_FEB.csv')
+df34 = pd.read_csv('INDOCEMENT6_FEB.csv')
+df35 = pd.read_csv('INDOCEMENT7_FEB.csv')
+df36 = pd.read_csv('INDOCEMENT8_FEB.csv')
+df37 = pd.read_csv('INDOCEMENT10_FEB.csv')
+df38 = pd.read_csv('JHLSOLITAIRE_FEB.csv')
+df39 = pd.read_csv('KENGSINGTONOFFICETOWER_FEB.csv')
+df40 = pd.read_csv('KLINIKLALITABEKASI_FEB.csv')
+df41 = pd.read_csv('LABSCHOOL1_FEB.csv')
+df42 = pd.read_csv('LABSCHOOL2_FEB.csv')
+df43 = pd.read_csv('LIONVILLAGE1_FEB.csv')
+df44 = pd.read_csv('LIONVILLAGE2_FEB.csv')
+df45 = pd.read_csv('LIPPOTOWERHOLLAND_FEB.csv')
+df46 = pd.read_csv('LIPPOTOWERHOLLAND2_FEB.csv')
+df47 = pd.read_csv('LIPPOTOWERHOLLAND3_FEB.csv')
+df48 = pd.read_csv('MANULIFE1_FEB.csv')
+df49 = pd.read_csv('MANULIFE2_FEB.csv')
+df50 = pd.read_csv('MASJIDALAZHARBEKASI1_FEB.csv')
+df51 = pd.read_csv('MASJIDATTAIBIN_FEB.csv')
+df52 = pd.read_csv('MENARATHAMRIN_FEB.csv')
+df53 = pd.read_csv('MONSTERMART_FEB.csv')
+df54 = pd.read_csv('NEOSOHO_FEB.csv')
+df55 = pd.read_csv('NINERESIDENCE_FEB.csv')
+df56 = pd.read_csv('PADINASOHO_FEB.csv')
+df57 = pd.read_csv('PTBAKER&HUGHES_FEB.csv')
+df58 = pd.read_csv('PTBASF_FEB.csv')
+df59 = pd.read_csv('PTCCIE(INDOCEMENT11)_FEB.csv')
+df60 = pd.read_csv('PTINDOCEMENT9(GEDUNGGMO)_FEB.csv')
+df61 = pd.read_csv('PTMATRARODAPIRANTI1_FEB.csv')
+df62 = pd.read_csv('PTMATRARODAPIRANTI2_FEB.csv')
+df63 = pd.read_csv('PTMATRARODAPIRANTI3_FEB.csv')
+df64 = pd.read_csv('PTSINERGI_FEB.csv')
+df65 = pd.read_csv('PTTIMERINDO_FEB.csv')
+df66 = pd.read_csv('PTTOACOATING1_FEB.csv')
+df67 = pd.read_csv('PULOMAS1_FEB.csv')
+df68 = pd.read_csv('PULOMAS2_FEB.csv')
+df69 = pd.read_csv('PULOMAS4_FEB.csv')
+df70 = pd.read_csv('REGALSTUDIO_FEB.csv')
+df71 = pd.read_csv('ROYALENFIELDANTASARI_FEB.csv')
+df72 = pd.read_csv('RSCM1_FEB.csv')
+df73 = pd.read_csv('RSCM2_FEB.csv')
+df74 = pd.read_csv('RSCM3_FEB.csv')
+df75 = pd.read_csv('RSCM4_FEB.csv')
+df76 = pd.read_csv('RSDINDA_FEB.csv')
+df77 = pd.read_csv('RSIAPRATIWI_FEB.csv')
+df78 = pd.read_csv('RSJAKARTA2_FEB.csv')
+df79 = pd.read_csv('RSJAKARTA3_FEB.csv')
+df80 = pd.read_csv('RSUIFARMASI_FEB.csv')
+df81 = pd.read_csv('RSUIIGD_FEB.csv')
+df82 = pd.read_csv('RSUILOBBY_FEB.csv')
+df83 = pd.read_csv('RSUILT5_FEB.csv')
+df84 = pd.read_csv('SEKOLAHALAZHARGRANDWISATABEKASI_FEB.csv')
+df85 = pd.read_csv('SAMSUNGKUNINGAN1_FEB.csv')
+df86 = pd.read_csv('SAMSUNGKUNINGAN2_FEB.csv')
+df87 = pd.read_csv('SEKOLAHBSP_FEB.csv')
+df88 = pd.read_csv('SENTRATIMUR1_FEB.csv')
+df89 = pd.read_csv('SENTRATIMUR2_FEB.csv')
+df90 = pd.read_csv('SEKOLAHFAJAR_FEB.csv')
+df91 = pd.read_csv('SMARTHAPPYKIDS_FEB.csv')
+df92 = pd.read_csv('SMKTELKOM_FEB.csv')
+df93 = pd.read_csv('STREGIST1_FEB.csv')
+df94 = pd.read_csv('STREGIST2_FEB.csv')
+df95 = pd.read_csv('UNIPREPBSD1_FEB.csv')
+df96 = pd.read_csv('UNIPREPBSD2_FEB.csv')
+df97 = pd.read_csv('UNIPREPKELAPAGADING_FEB.csv')
+df98 = pd.read_csv('UNIPREPPONDOKINDAH_FEB.csv')
+df99 = pd.read_csv('UNIVBAKRIE1_FEB.csv')
+df100 = pd.read_csv('UNIVBAKRIE2_FEB.csv')
+df101 = pd.read_csv('UNIVBAKRIE3_FEB.csv')
+df102 = pd.read_csv('UNIVERSALLUGAGE1_FEB.csv')
+df103 = pd.read_csv('UNIVERSALLUGAGE2_FEB.csv')
+df104 = pd.read_csv('UNIVERSITASPANCASILA_FEB.csv')
+
+
+# In[3]:
+
+
+combined = pd.concat([df1,df2,df3,df4,df5,df6,df7,df8,df9,df10,df11,df12,df13,df14,df15,df16,df17,df18,df19,df20,df21,df22,df23,df24,df25,df26,df27,df28,df29,df30,df31,df32,df33,df34,df35,df36,df37,df38,df39,df40,df41,df42,df43,df44,df45,df46,df47,df48,df49,df50,df51,df52,df53,df54,df55,df56,df57,df58,df59,df60,df61,df62,df63,df64,df65,df66,df67,df68,df69,df70,df71,df72,df73,df74,df75,df76,df77,df78,df79,df80,df81,df82,df83,df84,df85,df86,df87,df88,df89,df90,df91,df92,df93,df94,df95,df96,df97,df98,df99,df100,df101,df102,df103,df104], ignore_index=True)
+
+
+# In[ ]:
+
+
+combined.to_csv('combined.csv', index=False)
+
+
+# In[ ]:
+
+
+import streamlit as st
+import pandas as pd
+
+def main():
+    st.title('Vending Machine Top Sales')
+
+    options = {'AKULAKU':'AKULAKU_FEB.csv', 
+               'ALL SEDAYU':'ALLSEDAYU_FEB.csv',
+               'ARGAPURA2': 'ARGAPURA2_FEB.csv',
+               'ARWANA CITRA':'ARWANACITRA_FEB.csv',
+               'ASURANSI JIWA AL AMIN':'ASURANSIJIWAALAMIN_FEB.csv',
+               'AXA 4':'AXA4_FEB.csv',
+               'AXA KUNINGAN1':'AXAKUNINGAN1_FEB.csv',
+               'AXA KUNINGAN2':'AXAKUNINGAN2_FEB.csv',
+               'AXA KUNINGAN3':'AXAKUNINGAN3_FEB.csv',
+               'BAKRIE AND BROTHER LT 27':'BAKRIEANDBROTHERLT27_FEB.csv',
+               'BNI RAWAMANGUN':'BNIRAWAMANGUN_FEB.csv',
+               'CBC GALLERY':'CBCGALLERY_FEB.csv',
+               'CLUSTER ATHALIA 1':'CLUSTERATHALIA1_FEB.csv',
+               'CLUSTER ATHALIA 2':'CLUSTERATHALIA2_FEB.csv',
+               'CLUSTER BLUE RIVER 2':'CLUSTERBLUERIVER2_FEB.csv',
+               'CV JAYA ABADI 3':'CVJAYAABADI3_FEB.csv',
+               'DIGNITAS ACADEMY':'DIGNITASACADEMY_FEB.csv',
+               'GRAHA ELNUSA':'GRAHAELNUSA_FEB.csv',
+               'GRIYA PATRIA GUEST HOUSE':'GRIYAPATRIAGUESTHOUSE_FEB.csv',
+               'HALIM':'HALIM_FEB.csv',
+               'HONDA MT HARYONO':'HONDAMTHARYONO_FEB.csv',
+               'HOTEL 101':'HOTEL101_FEB.csv',
+               'HOTEL HERMITAGE':'HOTELHERMITAGE_FEB.csv',
+               'HOTEL HILTON':'HOTELHILTON_FEB.csv',
+               'HOTEL KEMPINSKI 1':'HOTELKEMPINSKI1_FEB.csv',
+               'HOTEL MERCURE':'HOTELMERCURE_FEB.csv',
+               'HOTEL PARK HYATT':'HOTELPARKHYATT_FEB.csv',
+               'HOTEL WYNDHAM':'HOTELWYNDHAM_FEB.csv',
+               'INDOCEMENT':'INDOCEMENT_FEB.csv',
+               'INDOCEMENT 2':'INDOCEMENT2_FEB.csv',
+               'INDOCEMENT 3':'INDOCEMENT3_FEB.csv',
+               'INDOCEMENT 4':'INDOCEMENT4_FEB.csv',
+               'INDOCEMENT 5':'INDOCEMENT5_FEB.csv',
+               'INDOCEMENT 6':'INDOCEMENT6_FEB.csv',
+               'INDOCEMENT 7':'INDOCEMENT7_FEB.csv',
+               'INDOCEMENT 8':'INDOCEMENT8_FEB.csv',
+               'INDOCEMENT 10':'INDOCEMENT10_FEB.csv',
+               'JHL SOLITAIRE':'JHLSOLITAIRE_FEB.csv',
+               'KENGSINGTON OFFICE TOWER':'KENGSINGTONOFFICETOWER_FEB.csv',
+               'KLINIK LALITA BEKASI':'KLINIKLALITABEKASI_FEB.csv',
+               'LAB SCHOOL 1':'LABSCHOOL1_FEB.csv',
+               'LAB SCHOOL 2':'LABSCHOOL2_FEB.csv',
+               'LION VILLAGE 1':'LIONVILLAGE1_FEB.csv',
+               'LION VILLAGE 2':'LIONVILLAGE2_FEB.csv',
+               'LIPPO TOWER HOLLAND':'LIPPOTOWERHOLLAND_FEB.csv',
+               'LIPPO TOWER HOLLAND 2':'LIPPOTOWERHOLLAND2_FEB.csv',
+               'LIPPO TOWER HOLLAND 3':'LIPPOTOWERHOLLAND3_FEB.csv',
+               'MANULIFE 1':'MANULIFE1_FEB.csv',
+               'MANULIFE 2':'MANULIFE2_FEB.csv',
+               'MASJID AL AZHAR BEKASI':'MASJIDALAZHARBEKASI1_FEB.csv',
+               'MASJID AT TAIBIN':'MASJIDATTAIBIN_FEB.csv',
+               'MENARA THAMRIN':'MENARATHAMRIN_FEB.csv',
+               'MONSTERMART':'MONSTERMART_FEB.csv',
+               'NEOSOHO':'NEOSOHO_FEB.csv',
+               'NINE RESIDENCE':'NINERESIDENCE_FEB.csv',
+               'PADINA SOHO':'PADINASOHO_FEB.csv',
+               'PT BAKER & HUGHES':'PTBAKER&HUGHES_FEB.csv',
+               'PT BASF':'PTBASF_FEB.csv',
+               'PT CCIE (INDOCEMENT11)':'PTCCIE(INDOCEMENT11)_FEB.csv',
+               'PT MATRA RODA PIRANTI 1':'PTMATRARODAPIRANTI1_FEB.csv',
+               'PT MATRA RODA PIRANTI 2':'PTMATRARODAPIRANTI2_FEB.csv',
+               'PT MATRA RODA PIRANTI 3':'PTMATRARODAPIRANTI3_FEB.csv',
+               'PT SINERGI':'PTSINERGI_FEB.csv',
+               'PT TIMERINDO':'PTTIMERINDO_FEB.csv',
+               'PT TOA COATING 1':'PTTOACOATING1_FEB.csv',
+               'PULOMAS 1':'PULOMAS1_FEB.csv',
+               'PULOMAS 2':'PULOMAS2_FEB.csv',
+               'PULOMAS 4':'PULOMAS4_FEB.csv',
+               'REGAL STUDIO':'REGALSTUDIO_FEB.csv',
+               'ROYAL ENFIELD ANTASARI':'ROYALENFIELDANTASARI_FEB.csv',
+               'RSCM 1':'RSCM1_FEB.csv',
+               'RSCM 2':'RSCM2_FEB.csv',
+               'RSCM 3':'RSCM3_FEB.csv',
+               'RSCM 4':'RSCM4_FEB.csv',
+               'RSDINDA':'RSDINDA_FEB.csv',
+               'RSIAPRATIWI':'RSIAPRATIWI_FEB.csv',
+               'RS JAKARTA 2':'RSJAKARTA2_FEB.csv',
+               'RS JAKARTA 3':'RSJAKARTA3_FEB.csv',
+               'RS UI FARMASI':'RSUIFARMASI_FEB.csv',
+               'RS UI IGD':'RSUIIGD_FEB.csv',
+               'RS UI LOBBY':'RSUILOBBY_FEB.csv',
+               'RSUI LT 5':'RSUILT5_FEB.csv',
+               'SEKOLAH AL AZHAR GRAND WISATA BEKASI':'SEKOLAHALAZHARGRANDWISATABEKASI_FEB.csv',
+               'SAMSUNG KUNINGAN 1':'SAMSUNGKUNINGAN1_FEB.csv',
+               'SAMSUNG KUNINGAN 2':'SAMSUNGKUNINGAN2_FEB.csv',
+               'SEKOLAH BSP':'SEKOLAHBSP_FEB.csv',
+               'SEKOLAH FAJAR':'SEKOLAHFAJAR_FEB.csv',
+               'SENTRA TIMUR 1':'SENTRATIMUR1_FEB.csv',
+               'SENTRA TIMUR 2':'SENTRATIMUR2_FEB.csv',
+               'SMART HAPPY KIDS':'SMARTHAPPYKIDS_FEB.csv',
+               'SMK TELKOM':'SMKTELKOM_FEB.csv',
+               'ST REGIST 1':'STREGIST1_FEB.csv',
+               'ST REGIST 2':'STREGIST2_FEB.csv',
+               'UNIPREP BSD 1':'UNIPREPBSD1_FEB.csv',
+               'UNIPREP BSD 2':'UNIPREPBSD2_FEB.csv',
+               'UNIPREP KELAPA GADING':'UNIPREPKELAPAGADING_FEB.csv',
+               'UNIPREP PONDOK INDAH':'UNIPREPPONDOKINDAH_FEB.csv',
+               'UNIV BAKRIE 1':'UNIVBAKRIE1_FEB.csv',
+               'UNIV BAKRIE 2':'UNIVBAKRIE2_FEB.csv',
+               'UNIV BAKRIE 3':'UNIVBAKRIE3_FEB.csv',
+               'UNIVERSAL LUGAGE 1':'UNIVERSALLUGAGE1_FEB.csv',
+               'UNIVERSAL LUGAGE 2':'UNIVERSALLUGAGE2_FEB.csv',
+               'UNIVERSITAS PANCASILA':'UNIVERSITASPANCASILA_FEB.csv'}
+    
+    selected_option = st.selectbox('Select Vending Machine', options)
+    
+    df = pd.read_csv('combined.csv')
+    df_sorted = df.sort_values(by="Qty Sold", ascending=False)
+    top_10 = df_sorted.head(10)
+    st.subheader('Top 10 Quantities Sold')
+
+if __name__ == "__main__":
+    main()
+
