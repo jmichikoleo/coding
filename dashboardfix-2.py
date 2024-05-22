@@ -131,6 +131,10 @@ import altair as alt
 
 def main():
     st.title('Vending Machine Top Sales')
+
+    if st.button('Home'):
+        st.markdown('[Click here to go to Home](https://22ndmay-dpn5dfogubnbsunxhffucm.streamlit.app/)')
+    
     options = {
         'ALL': 'combined.csv',
         'AKULAKU': 'AKULAKU_FEB.csv',
