@@ -130,9 +130,6 @@ import matplotlib.pyplot as plt
 import altair as alt
 
 def main():
-    if st.button('Home'):
-    st.markdown('[Click here to go to Home](https://22ndmay-dpn5dfogubnbsunxhffucm.streamlit.app/)')
-    
     st.title('Vending Machine Top Sales')
     options = {
         'ALL': 'combined.csv',
