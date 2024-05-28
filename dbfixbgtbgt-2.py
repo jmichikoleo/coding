@@ -274,7 +274,7 @@ def main():
         resampled_df = filtered_df.set_index('Transaction').resample(frequencies[selected_frequency]).size()
         resampled_df.plot(ax=ax, marker='o', label=product)
         
-        for idx, value in resampled_df.iteritems():
+        for idx, value in resampled_df.items():
             ax.annotate(f'{value}', xy=(idx, value), xytext=(0, 5), textcoords='offset points', ha='center', fontsize=8)
 
     plt.xlabel('Date')
